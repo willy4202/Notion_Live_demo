@@ -8,7 +8,17 @@ const databaseId = process.env.NOTION_API_DATABASE;
 
 const getDatabase = async () => {
   const response = await notion.databases.query({ database_id: databaseId });
-  console.log(response);
+
+  const refinedResponse = response.results.map((page) => {
+    return {
+      id: page.id,
+      name: page.properties.이름.title[0]?.plain_text,
+      number: page.properties.전화번호?.phone_number,
+      status: page.properties.현황.status?.name,
+    };
+  });
+  console.log(refinedResponse);
+  return refinedResponse;
 };
 
 getDatabase();
