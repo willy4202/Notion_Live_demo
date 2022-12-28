@@ -20,3 +20,5 @@ const getDatabase = async () => {
   console.log(refinedResponse);
   return refinedResponse;
 };
+
+module.exports = { getDatabase };
