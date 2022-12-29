@@ -5,5 +5,36 @@ const getDataFromBackend = async () => {
   return data;
 };
 
-const res = await getDataFromBackend();
-console.log(res);
+const addData = async () => {
+  const data = await getDataFromBackend();
+  console.log(data);
+
+  data.forEach((value) => {
+    const div = document.createElement('div');
+    div.classList.add('hosptialContainer');
+    div.innerHTML = `
+        <h3>${value.name}</h3>
+        <p>${value.status}</p>
+        <p>${value.number}</p>
+    `;
+
+    container.append(div);
+  });
+};
+
+addData();
+
+const container = document.getElementById('container');
+// the new variables
+const openFormButton = document.getElementById('newButton');
+const closeFormButton = document.getElementById('closeFormButton');
+const addHospitalFormContainer = document.getElementById(
+  'addHospitalFormContainer'
+);
+openFormButton.addEventListener('click', () => {
+  addHospitalFormContainer.style.display = 'flex';
+});
+
+closeFormButton.addEventListener('click', () => {
+  addHospitalFormContainer.style.display = 'none';
+});

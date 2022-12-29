@@ -13,6 +13,37 @@
       <div id="container"></div>
     </div>
 
+    <div id="addHospitalFormContainer">
+      <button id="closeFormButton">Close</button>
+      <form method="POST" action="/submit-form" id="addHospitalForm">
+        <h1 id="formTitle">Add a new Hospital to your database</h1>
+        <input
+          type="text"
+          name="name"
+          placeholder="Insert hospital name"
+          class="inputField"
+          required
+        />
+        <input
+          type="text"
+          name="status"
+          placeholder="Insert hospital status"
+          class="inputField"
+          required
+        />
+        <input
+          type="text"
+          name="number"
+          placeholder="Insert hospital number"
+          class="inputField"
+          required
+        />
+        <input type="submit" id="submitFormInput" />
+      </form>
+    </div>
+
+    <button id="newButton">Add a new Hospital</button>
+
     <script type="module" src="./main.js"></script>
   </body>
 </html>
