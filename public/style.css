@@ -77,8 +77,8 @@ html {
   justify-content: center;
   align-items: center;
 
-  background: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(20px);
+  background: rgba(108, 122, 137, 0.4);
+  backdrop-filter: blur(4px);
 }
 
 #closeFormButton {
@@ -110,8 +110,8 @@ html {
   align-items: center;
 
   background: white;
-
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 10px;
 }
 
 #addHospitalForm input {
