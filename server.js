@@ -18,9 +18,9 @@ app.get('/data', async (req, res) => {
 });
 
 app.post('/submit-form', async (req, res) => {
-  const name = req.body.name;
-  const number = req.body.number;
-  await pagemethods.createPageToDatabase(name, number);
+  const place = req.body.place;
+  const address = req.body.address;
+  await pagemethods.createPageToDatabase(place, address);
   res.redirect('/');
   res.end();
 });

@@ -8,9 +8,10 @@ const getDatabase = async () => {
   const refinedResponse = response.results.map((page) => {
     return {
       id: page.id,
-      name: page.properties.이름.title[0]?.plain_text,
-      number: page.properties.전화번호?.phone_number,
-      status: page.properties.현황.status?.name,
+      place: page.properties.place.title[0]?.plain_text,
+      address: page.properties.address.rich_text[0]?.plain_text,
+      status: page.properties.status.select?.name,
+      link: page.properties.link?.url,
     };
   });
   return refinedResponse;

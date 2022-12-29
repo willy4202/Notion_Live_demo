@@ -3,22 +3,39 @@ const { Client } = require('@notionhq/client');
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
 const databaseId = process.env.NOTION_API_DATABASE;
 
-const createPageToDatabase = async (hospital_name, number) => {
+const createPageToDatabase = async (place_name, address) => {
   const response = await notion.pages.create({
     parent: {
       database_id: databaseId,
     },
     properties: {
-      이름: {
+      place: {
         title: [
           {
-            text: { content: hospital_name },
+            text: {
+              content: place_name,
+            },
           },
         ],
       },
+      address: {
+        rich_text: [
+          {
+            type: 'text',
+            text: {
+              content: address,
+            },
+          },
+        ],
+      },
+      link: {
+        url: '링크 미정',
+      },
 
-      전화번호: {
-        phone_number: number,
+      status: {
+        select: {
+          name: '진료 대기',
+        },
       },
     },
   });
