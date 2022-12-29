@@ -13,6 +13,7 @@
 
 notion DataBase의 page list를 볼 수 있습니다.
 해당 페이지에서 노션 DB의 page를 create 할 수 있습니다.
+![](https://velog.velcdn.com/images/willy4202/post/9cb40929-ba61-4e72-b348-5e692ac6fb09/image.gif)
 
 ### 사용법
 
